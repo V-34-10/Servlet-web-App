@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+  <changeSet id="create_positions" author="svitlana">
+    <createTable tableName="positions">
+      <column autoIncrement="true" name="position_id" type="int">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="name" type="varchar(50)">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="create_education_levels" author="vlad">
+    <createTable tableName="education_levels">
+      <column autoIncrement="true" name="education_level_id" type="int">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="name" type="varchar(20)">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="create_employees" author="svitlana">
+    <createTable tableName="employees">
+      <column autoIncrement="true" name="employee_id" type="int">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="firstName" type="varchar(50)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="lastName" type="varchar(50)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="position_id" type="int">
+        <constraints nullable="false"
+          foreignKeyName="fk_employee_position"
+          references="positions(position_id)"
+        />
+      </column>
+      <column name="education_level_id" type="int">
+        <constraints nullable="false"
+          foreignKeyName="fk_employee_education_level"
+          references="education_levels(education_level_id)"
+        />
+      </column>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="create_permissions" author="svitlana">
+    <createTable tableName="permissions">
+      <column autoIncrement="true" name="permission_id" type="int">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="name" type="varchar(50)">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="create_users" author="svitlana">
+    <createTable tableName="users">
+      <column autoIncrement="true" name="user_id" type="int">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+      <column name="login" type="varchar(30)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="password" type="varchar(15)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="permission_id" type="int">
+        <constraints nullable="false"
+          foreignKeyName="fk_user_permission"
+          references="permissions(permission_id)"
+        />
+      </column>
+    </createTable>
+  </changeSet>
+
+
+  <changeSet id="tag-1.0" author="svitlana">
+    <tagDatabase tag="1.0"/>
+  </changeSet>
+
+</databaseChangeLog>

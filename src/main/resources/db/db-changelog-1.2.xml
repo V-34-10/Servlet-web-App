@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+
+  <property name="formatter" value="'%d-%m-%Y %h:%i'"/>
+
+  <changeSet id="insert_data_to_positions" author="svitlana">
+    <insert tableName="positions">
+      <column name="position_id" value="1"/>
+      <column name="name" value="Директор"/>
+    </insert>
+    <insert tableName="positions">
+      <column name="position_id" value="2"/>
+      <column name="name" value="Менеджер"/>
+    </insert>
+    <insert tableName="positions">
+      <column name="position_id" value="3"/>
+      <column name="name" value="Секретар"/>
+    </insert>
+    <insert tableName="positions">
+      <column name="position_id" value="4"/>
+      <column name="name" value="Бухгалтер"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="insert_data_to_education_levels" author="vlad">
+    <insert tableName="education_levels">
+      <column name="education_level_id" value="1"/>
+      <column name="name" value="Базова"/>
+    </insert>
+    <insert tableName="education_levels">
+      <column name="education_level_id" value="2"/>
+      <column name="name" value="Повна"/>
+    </insert>
+    <insert tableName="education_levels">
+      <column name="education_level_id" value="3"/>
+      <column name="name" value="Неповна вища"/>
+    </insert>
+    <insert tableName="education_levels">
+      <column name="education_level_id" value="4"/>
+      <column name="name" value="Повна вища"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="insert_data_to_employees" author="svitlana">
+    <insert tableName="employees">
+      <column name="employee_id" value="1"/>
+      <column name="firstName" value="Вадим"/>
+      <column name="lastName" value="Зернацький"/>
+      <column name="position_id" value="1"/>
+      <column name="education_level_id" value="1"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="employee_id" value="2"/>
+      <column name="firstName" value="Петро"/>
+      <column name="lastName" value="Петренко"/>
+      <column name="position_id" value="2"/>
+      <column name="education_level_id" value="2"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="employee_id" value="3"/>
+      <column name="firstName" value="Ліза"/>
+      <column name="lastName" value="Джобс"/>
+      <column name="position_id" value="3"/>
+      <column name="education_level_id" value="3"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="employee_id" value="4"/>
+      <column name="firstName" value="Вікторія"/>
+      <column name="lastName" value="Пархоменко"/>
+      <column name="position_id" value="4"/>
+      <column name="education_level_id" value="4"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="employee_id" value="5"/>
+      <column name="firstName" value="Валентина"/>
+      <column name="lastName" value="Шелудько"/>
+      <column name="position_id" value="2"/>
+      <column name="education_level_id" value="1"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="employee_id" value="6"/>
+      <column name="firstName" value="Володимир"/>
+      <column name="lastName" value="Вовк"/>
+      <column name="position_id" value="2"/>
+      <column name="education_level_id" value="2"/>
+    </insert>
+    <insert tableName="employees">
+      <column name="employee_id" value="7"/>
+      <column name="firstName" value="Людмила"/>
+      <column name="lastName" value="Чуйко"/>
+      <column name="position_id" value="4"/>
+      <column name="education_level_id" value="3"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="tag-1.2 insert data" author="svitlana">
+    <tagDatabase tag="1.2"/>
+  </changeSet>
+
+</databaseChangeLog>
