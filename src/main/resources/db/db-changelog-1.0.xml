@@ -5,7 +5,7 @@
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
 
-  <changeSet id="create_positions" author="svitlana">
+  <changeSet id="create_positions" author="vlad">
     <createTable tableName="positions">
       <column autoIncrement="true" name="position_id" type="int">
         <constraints primaryKey="true" nullable="false"/>
@@ -27,7 +27,7 @@
     </createTable>
   </changeSet>
 
-  <changeSet id="create_employees" author="svitlana">
+  <changeSet id="create_employees" author="vlad">
     <createTable tableName="employees">
       <column autoIncrement="true" name="employee_id" type="int">
         <constraints primaryKey="true" nullable="false"/>
@@ -53,7 +53,7 @@
     </createTable>
   </changeSet>
 
-  <changeSet id="create_permissions" author="svitlana">
+  <changeSet id="create_permissions" author="vlad">
     <createTable tableName="permissions">
       <column autoIncrement="true" name="permission_id" type="int">
         <constraints primaryKey="true" nullable="false"/>
@@ -64,7 +64,7 @@
     </createTable>
   </changeSet>
 
-  <changeSet id="create_users" author="svitlana">
+  <changeSet id="create_users" author="vlad">
     <createTable tableName="users">
       <column autoIncrement="true" name="user_id" type="int">
         <constraints primaryKey="true" nullable="false"/>
@@ -85,7 +85,7 @@
   </changeSet>
 
 
-  <changeSet id="tag-1.0" author="svitlana">
+  <changeSet id="tag-1.0" author="vlad">
     <tagDatabase tag="1.0"/>
   </changeSet>
 
