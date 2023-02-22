@@ -6,7 +6,7 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
 
 
-  <changeSet id="insert_data_to_permissions" author="svitlana">
+  <changeSet id="insert_data_to_permissions" author="vlad">
     <insert tableName="permissions">
       <column name="permission_id" value="1"/>
       <column name="name" value="admin"/>
@@ -25,7 +25,7 @@
     </insert>
   </changeSet>
 
-  <changeSet id="insert_data_to_users" author="svitlana">
+  <changeSet id="insert_data_to_users" author="vlad">
     <insert tableName="users">
       <column name="user_id" value="1"/>
       <column name="login" value="admin"/>
@@ -53,7 +53,7 @@
   </changeSet>
 
 
-  <changeSet id="tag-1.1 insert data" author="svitlana">
+  <changeSet id="tag-1.1 insert data" author="vlad">
     <tagDatabase tag="1.1"/>
   </changeSet>
 
