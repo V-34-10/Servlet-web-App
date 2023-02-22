@@ -8,7 +8,7 @@
 
   <property name="formatter" value="'%d-%m-%Y %h:%i'"/>
 
-  <changeSet id="insert_data_to_positions" author="svitlana">
+  <changeSet id="insert_data_to_positions" author="vlad">
     <insert tableName="positions">
       <column name="position_id" value="1"/>
       <column name="name" value="Директор"/>
@@ -46,7 +46,7 @@
     </insert>
   </changeSet>
 
-  <changeSet id="insert_data_to_employees" author="svitlana">
+  <changeSet id="insert_data_to_employees" author="vlad">
     <insert tableName="employees">
       <column name="employee_id" value="1"/>
       <column name="firstName" value="Вадим"/>
@@ -98,7 +98,7 @@
     </insert>
   </changeSet>
 
-  <changeSet id="tag-1.2 insert data" author="svitlana">
+  <changeSet id="tag-1.2 insert data" author="vlad">
     <tagDatabase tag="1.2"/>
   </changeSet>
 
